@@ -3,6 +3,7 @@ import axios from "axios";
 import './App.css';
 import PersonCard from "./components/PersonCard";
 import PeopleGrid from "./components/PersonCard";
+import { GridDiv } from "./components/PeopleGrid";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -24,6 +25,7 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
+      <GridDiv>
       {data.map( (item, index) => {
         console.log(item)
         return <PersonCard key={index}
@@ -35,6 +37,7 @@ const App = () => {
          mass={item.mass}
          />
       })}
+      </GridDiv>
     </div>
   );
 }
